@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리버풀 한인교회 | Liverpool Korean Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1a2744;
+    --navy-light: #2d3f6e;
+    --gold: #b8963a;
+    --gold-light: #d4ae5c;
+    --cream: #f8f5ef;
+    --cream-dark: #ede9df;
+    --text-dark: #1a1a1a;
+    --text-mid: #444;
+    --text-light: #888;
+    --white: #ffffff;
+    --border: rgba(0,0,0,0.1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 68px;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-cross {
+    width: 28px; height: 28px;
+    position: relative;
+  }
+
+  .nav-logo-cross::before, .nav-logo-cross::after {
+    content: '';
+    position: absolute;
+    background: var(--navy);
+    border-radius: 2px;
+  }
+
+  .nav-logo-cross::before { width: 4px; height: 100%; left: 50%; transform: translateX(-50%); }
+  .nav-logo-cross::after  { width: 100%; height: 4px; top: 35%; }
+
+  .nav-logo-text { font-family: 'Noto Serif KR', serif; font-size: 15px; font-weight: 500; color: var(--navy); letter-spacing: 0.02em; }
+  .nav-logo-sub  { font-size: 10px; color: var(--text-light); letter-spacing: 0.05em; text-transform: uppercase; }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 14px; color: var(--text-mid); letter-spacing: 0.02em; transition: color .2s; }
+  .nav-links a:hover { color: var(--navy); }
+
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--navy-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 68px;
+  }
+
+  .hero-left {
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+
+  .hero-subtitle {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-verse {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.9;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .hero-card-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 6px; }
+  .hero-card-value { font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 400; }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream-dark);
+  }
+
+  .hero-right img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: sepia(10%) brightness(0.92);
+  }
+
+  .hero-right-overlay {
+    position: absolute;
+    bottom: 2rem; left: 2rem;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    padding: 16px 20px;
+    max-width: 300px;
+  }
+
+  .hero-right-overlay p { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
+  .hero-right-overlay strong { color: var(--navy); font-weight: 500; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 5rem 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+  .section-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+
+  .section-line {
+    width: 40px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 2rem;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--cream); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .pillar {
+    padding: 1.2rem;
+    background: var(--white);
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .pillar-icon { font-size: 20px; margin-bottom: 8px; }
+  .pillar-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+  .pillar-desc  { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+
+  .about-image-stack {
+    position: relative;
+    height: 480px;
+  }
+
+  .about-image-stack img {
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .about-img-main {
+    position: absolute;
+    top: 0; left: 0;
+    width: 75%; height: 75%;
+  }
+
+  .about-img-accent {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 55%; height: 55%;
+    border: 4px solid var(--cream);
+  }
+
+  /* ── WORSHIP TIME ── */
+  .worship { background: var(--navy); }
+
+  .worship .section-title { color: var(--white); }
+  .worship .section-eyebrow { color: var(--gold-light); }
+
+  .worship-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .worship-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: background .2s;
+  }
+
+  .worship-card:hover { background: rgba(255,255,255,0.1); }
+
+  .worship-card-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(184,150,58,0.15);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 20px;
+  }
+
+  .worship-card-title { font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 0.5rem; }
+  .worship-card-main  { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--gold-light); margin-bottom: 0.5rem; line-height: 1.1; }
+  .worship-card-sub   { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* ── GALLERY ── */
+  .gallery { background: var(--white); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 2.5rem;
+  }
+
+  .gallery-item {
+    height: 200px;
+  }
+
+  .gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--cream-dark);
+    position: relative;
+  }
+
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-item-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1rem;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6), transparent);
+    color: white;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  .gallery-item:hover .gallery-item-label { opacity: 1; }
+
+  .gallery-item.tall { grid-row: span 2; }
+
+  /* ── LOCATION ── */
+  .location { background: var(--cream); }
+
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .location-info { }
+
+  .info-block {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .info-icon {
+    width: 40px; height: 40px; min-width: 40px;
+    background: var(--navy);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    color: white;
+  }
+
+  .info-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+  .info-value { font-size: 15px; color: var(--text-dark); font-weight: 500; }
+  .info-detail { font-size: 13px; color: var(--text-mid); margin-top: 2px; }
+
+  .map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 380px;
+    border: 1px solid var(--border);
+  }
+
+  .map-container iframe { width: 100%; height: 100%; border: none; }
+
+  /* ── GIVING ── */
+  .giving { background: var(--navy); }
+
+  .giving .section-title { color: var(--white); }
+  .giving .section-eyebrow { color: var(--gold-light); }
+
+  .giving-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-top: 2.5rem;
+    max-width: 700px;
+  }
+
+  .giving-note { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+
+  .giving-account {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .acc-row {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .acc-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 4px; }
+  .acc-value { font-size: 14px; color: rgba(255,255,255,0.9); font-family: 'Courier New', monospace; letter-spacing: 0.04em; }
+
+  .acc-row.wide { grid-column: span 2; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--white); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-form { }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--cream);
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color .2s;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: var(--navy); }
+
+  .contact-form textarea { height: 120px; resize: vertical; }
+
+  .btn-submit {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background .2s;
+  }
+
+  .btn-submit:hover { background: var(--navy-light); }
+
+  .contact-aside p { font-size: 14px; color: var(--text-mid); line-height: 1.9; margin-bottom: 1rem; }
+
+  .social-links { display: flex; gap: 12px; margin-top: 1.5rem; }
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    color: var(--text-mid);
+    transition: all .2s;
+  }
+
+  .social-btn:hover { border-color: var(--navy); color: var(--navy); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 3rem 0 2rem;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .footer-brand-en {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1rem;
+  }
+
+  .footer-brand-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+
+  .footer-col-title { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; }
+  .footer-col li { list-style: none; margin-bottom: 8px; }
+  .footer-col li a, .footer-col li span { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; }
+  .footer-col li a:hover { color: rgba(255,255,255,0.9); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+  /* ── HAMBURGER (mobile) ── */
+  .hamburger { display: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: block; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; border-radius: 2px; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-right { height: 280px; }
+    .hero-info-cards { grid-template-columns: 1fr 1fr; }
+
+    .about-grid, .location-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-image-stack { height: 280px; }
+    .about-img-main { width: 80%; height: 80%; }
+    .about-img-accent { width: 55%; height: 55%; }
+
+    .worship-cards { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item.tall { grid-row: span 1; }
+    .gallery-grid { height: auto; }
+    .gallery-item { height: 180px; }
+
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    section { padding: 3.5rem 0; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-info-cards { grid-template-columns: 1fr; }
+    .about-pillars { grid-template-columns: 1fr; }
+    .giving-account { grid-template-columns: 1fr; }
+    .acc-row.wide { grid-column: span 1; }
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-cross"></div>
+    <div>
+      <div class="nav-logo-text">리버풀 한인교회</div>
+      <div class="nav-logo-sub">Liverpool Korean Church</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">교회 소개</a></li>
+    <li><a href="#worship">예배 안내</a></li>
+    <li><a href="#gallery">갤러리</a></li>
+    <li><a href="#location">오시는 길</a></li>
+    <li><a href="#contact">문의하기</a></li>
+  </ul>
+  <a href="#worship" class="nav-cta">예배 안내</a>
+  <button class="hamburger" aria-label="메뉴">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Liverpool Korean Church · LKCUK · 2022년 설립</p>
+    <h1 class="hero-title">
+      리버풀 속<br>
+      <em>한인 신앙공동체</em>
+    </h1>
+    <p class="hero-subtitle">Liverpool Korean Church — LKCUK</p>
+    <blockquote class="hero-verse">
+      "내가 너희를 사랑한 것 같이<br>
+      너희도 서로 사랑하라"<br>
+      <small style="font-size:11px; opacity:.7;">— 요한복음 13:34</small>
+    </blockquote>
+    <div class="hero-info-cards">
+      <div class="hero-card">
+        <div class="hero-card-label">주일 예배</div>
+        <div class="hero-card-value">매주 일요일<br>오후 1:30</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">예배 장소</div>
+        <div class="hero-card-value">St Philemon's<br>Church</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">주중 성경공부</div>
+        <div class="hero-card-value">매주 수요일<br>(장소 확인 요망)</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">담임목사</div>
+        <div class="hero-card-value">지성구 목사</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img 
+      src="images/unnamed.jpg"
+      alt="리버풀 한인교회 예배 장소 — St Philemon's Church"
+    >
+    <div class="hero-right-overlay">
+      <p><strong>정문이 잠겼을 경우</strong><br>옆 문(주차장 입구쪽 비상구)으로 입장하시면 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-eyebrow">교회 소개</p>
+        <h2 class="section-title">리버풀의 한인 커뮤니티와<br>함께하는 교회</h2>
+        <div class="section-line"></div>
+        <p>영국 리버풀 한인교회(Liverpool Korean Church – LKCUK)는 리버풀 지역에 거주하는 한인 유학생들과 교민들이 함께 모여 예배드리는 신앙 공동체입니다.</p>
+        <p>2022년에 세워진 이 교회는 믿음의 다음세대를 양성하고, 리버풀 지역의 복음화와 세계선교에 동참하는 것을 비전으로 품고 있습니다.</p>
+        <p>어떤 분이든 함께 하실 수 있습니다. 환영합니다.</p>
+
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">🎓</div>
+            <div class="pillar-title">유학생 사역</div>
+            <div class="pillar-desc">리버풀 지역 한인 유학생들의 신앙생활을 지원합니다</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🏘️</div>
+            <div class="pillar-title">교민 공동체</div>
+            <div class="pillar-desc">교민과 함께 믿음의 다음세대를 양성합니다</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🌍</div>
+            <div class="pillar-title">복음화 & 선교</div>
+            <div class="pillar-desc">리버풀 지역 복음화와 세계선교에 함께 합니다</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🍚</div>
+            <div class="pillar-title">애찬 교제</div>
+            <div class="pillar-desc">매주 예배 후 함께 나누는 한국 음식으로 교제합니다</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-image-stack">
+        <img class="about-img-main"
+          src="images/unnamed.jpg"
+          alt="교회 건물"
+          onerror="this.src='images/unnamed (4).jpg'"
+        >
+        <img class="about-img-accent"
+          src="images/unnamed (6).jpg"
+          alt="애찬 교제"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORSHIP -->
+<section class="worship" id="worship">
+  <div class="container">
+    <p class="section-eyebrow">예배 & 모임 안내</p>
+    <h2 class="section-title">함께 예배드립니다</h2>
+    <div class="worship-cards">
+      <div class="worship-card">
+        <div class="worship-card-icon">⛪</div>
+        <div class="worship-card-title">주일 예배</div>
+        <div class="worship-card-main">오후 1:30</div>
+        <div class="worship-card-sub">매주 일요일<br>St Philemon's Church<br>78 Admiral St, Toxteth, Liverpool L8 8BR</div>
+      </div>
+      <div class="worship-card">
+        <div class="worship-card-icon">📖</div>
+        <div class="worship-card-title">주중 성경공부</div>
+        <div class="worship-card-main">매주 수요일</div>
+        <div class="worship-card-sub">장소: 덕송정<br>대학교 여름방학 중 종강,<br>10월에 재개강 예정</div>
+      </div>
+      <div class="worship-card">
+        <div class="worship-card-icon">🙏</div>
+        <div class="worship-card-title">누구든지 환영합니다</div>
+        <div class="worship-card-main">모두 환영</div>
+        <div class="worship-card-sub">유학생, 교민, 방문객<br>누구든지 함께하실 수<br>있는 공동체입니다</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <p class="section-eyebrow">갤러리</p>
+    <h2 class="section-title">함께하는 교제의 시간</h2>
+    <div class="section-line"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall">
+        <img src="images/unnamed.jpg" alt="사진 1" loading="lazy">
+        <div class="gallery-item-label">사진 1</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (1).jpg" alt="사진 2" loading="lazy">
+        <div class="gallery-item-label">사진 2</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (2).jpg" alt="사진 3" loading="lazy">
+        <div class="gallery-item-label">사진 3</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (3).jpg" alt="사진 4" loading="lazy">
+        <div class="gallery-item-label">사진 4</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (4).jpg" alt="사진 5" loading="lazy">
+        <div class="gallery-item-label">사진 5</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (5).jpg" alt="사진 6" loading="lazy">
+        <div class="gallery-item-label">사진 6</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (6).jpg" alt="사진 7" loading="lazy">
+        <div class="gallery-item-label">사진 7</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (7).jpg" alt="사진 8" loading="lazy">
+        <div class="gallery-item-label">사진 8</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (8).jpg" alt="사진 9" loading="lazy">
+        <div class="gallery-item-label">사진 9</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (9).jpg" alt="사진 10" loading="lazy">
+        <div class="gallery-item-label">사진 10</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (10).jpg" alt="사진 11" loading="lazy">
+        <div class="gallery-item-label">사진 11</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (11).jpg" alt="사진 12" loading="lazy">
+        <div class="gallery-item-label">사진 12</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (12).jpg" alt="사진 13" loading="lazy">
+        <div class="gallery-item-label">사진 13</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (13).jpg" alt="사진 14" loading="lazy">
+        <div class="gallery-item-label">사진 14</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (14).jpg" alt="사진 15" loading="lazy">
+        <div class="gallery-item-label">사진 15</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (15).jpg" alt="사진 16" loading="lazy">
+        <div class="gallery-item-label">사진 16</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (16).jpg" alt="사진 17" loading="lazy">
+        <div class="gallery-item-label">사진 17</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (17).jpg" alt="사진 18" loading="lazy">
+        <div class="gallery-item-label">사진 18</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (18).jpg" alt="사진 19" loading="lazy">
+        <div class="gallery-item-label">사진 19</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (19).jpg" alt="사진 20" loading="lazy">
+        <div class="gallery-item-label">사진 20</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (20).jpg" alt="사진 21" loading="lazy">
+        <div class="gallery-item-label">사진 21</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (21).jpg" alt="사진 22" loading="lazy">
+        <div class="gallery-item-label">사진 22</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (22).jpg" alt="사진 23" loading="lazy">
+        <div class="gallery-item-label">사진 23</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (23).jpg" alt="사진 24" loading="lazy">
+        <div class="gallery-item-label">사진 24</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (24).jpg" alt="사진 25" loading="lazy">
+        <div class="gallery-item-label">사진 25</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (25).jpg" alt="사진 26" loading="lazy">
+        <div class="gallery-item-label">사진 26</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (26).jpg" alt="사진 27" loading="lazy">
+        <div class="gallery-item-label">사진 27</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (27).jpg" alt="사진 28" loading="lazy">
+        <div class="gallery-item-label">사진 28</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (28).jpg" alt="사진 29" loading="lazy">
+        <div class="gallery-item-label">사진 29</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (29).jpg" alt="사진 30" loading="lazy">
+        <div class="gallery-item-label">사진 30</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (30).jpg" alt="사진 31" loading="lazy">
+        <div class="gallery-item-label">사진 31</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (31).jpg" alt="사진 32" loading="lazy">
+        <div class="gallery-item-label">사진 32</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (32).jpg" alt="사진 33" loading="lazy">
+        <div class="gallery-item-label">사진 33</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (33).jpg" alt="사진 34" loading="lazy">
+        <div class="gallery-item-label">사진 34</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (34).jpg" alt="사진 35" loading="lazy">
+        <div class="gallery-item-label">사진 35</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (35).jpg" alt="사진 36" loading="lazy">
+        <div class="gallery-item-label">사진 36</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (36).jpg" alt="사진 37" loading="lazy">
+        <div class="gallery-item-label">사진 37</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (37).jpg" alt="사진 38" loading="lazy">
+        <div class="gallery-item-label">사진 38</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (38).jpg" alt="사진 39" loading="lazy">
+        <div class="gallery-item-label">사진 39</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/unnamed (39).jpg" alt="사진 40" loading="lazy">
+        <div class="gallery-item-label">사진 40</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="container">
+    <p class="section-eyebrow">오시는 길</p>
+    <h2 class="section-title">찾아오시는 방법</h2>
+    <div class="section-line"></div>
+    <div class="location-grid">
+      <div class="location-info">
+        <div class="info-block">
+          <div class="info-icon">⛪</div>
+          <div>
+            <div class="info-label">예배 장소</div>
+            <div class="info-value">St Philemon's Church</div>
+            <div class="info-detail">리버풀 한인교회 예배 장소</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon">📍</div>
+          <div>
+            <div class="info-label">주소</div>
+            <div class="info-value">78 Admiral St, Toxteth</div>
+            <div class="info-detail">Liverpool L8 8BR, England</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon">🕐</div>
+          <div>
+            <div class="info-label">주일 예배 시간</div>
+            <div class="info-value">매주 일요일 오후 1시 30분</div>
+            <div class="info-detail">정문이 잠긴 경우 옆 문(주차장 비상구) 이용</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon">✉️</div>
+          <div>
+            <div class="info-label">연락처</div>
+            <div class="info-value">ukm0691@gmail.com</div>
+            <div class="info-detail">카카오톡 ID: ukm0691 | 담임 지성구 목사</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon">📘</div>
+          <div>
+            <div class="info-label">SNS</div>
+            <div class="info-value"><a href="https://www.facebook.com/LKCUK" target="_blank" style="color: var(--navy); text-decoration:none;">facebook.com/LKCUK</a></div>
+            <div class="info-detail">페이스북에서 최신 소식을 만나보세요</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="map-container">
+          <iframe
+            src="https://maps.google.com/maps?q=78+Admiral+St,+Toxteth,+Liverpool+L8+8BR&output=embed"
+            allowfullscreen
+            loading="lazy"
+            title="리버풀 한인교회 지도"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIVING -->
+<section class="giving" id="giving">
+  <div class="container">
+    <p class="section-eyebrow">헌금 안내</p>
+    <h2 class="section-title">온라인 헌금</h2>
+    <div class="giving-box">
+      <p class="giving-note">아래 계좌로 헌금을 보내주실 수 있습니다. 모든 헌금은 교회 사역과 선교를 위해 쓰입니다.</p>
+      <div class="giving-account">
+        <div class="acc-row wide">
+          <div class="acc-label">Account Name</div>
+          <div class="acc-value">LIVERPOOL KOREAN CHURCH</div>
+        </div>
+        <div class="acc-row">
+          <div class="acc-label">Account Number</div>
+          <div class="acc-value">20801920</div>
+        </div>
+        <div class="acc-row">
+          <div class="acc-label">Sort Code</div>
+          <div class="acc-value">01-00-61</div>
+        </div>
+        <div class="acc-row">
+          <div class="acc-label">IBAN</div>
+          <div class="acc-value">GB78NWBK01006120801920</div>
+        </div>
+        <div class="acc-row">
+          <div class="acc-label">BIC / SWIFT</div>
+          <div class="acc-value">NWBKGB2L</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <p class="section-eyebrow">문의하기</p>
+        <h2 class="section-title">궁금한 것이 있으신가요?</h2>
+        <div class="section-line"></div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <input type="text" placeholder="이름" required>
+          <input type="email" placeholder="이메일 주소" required>
+          <input type="text" placeholder="제목">
+          <textarea placeholder="문의 내용을 입력해주세요"></textarea>
+          <button type="submit" class="btn-submit">메시지 보내기</button>
+        </form>
+      </div>
+      <div class="contact-aside">
+        <p class="section-eyebrow">직접 연락하기</p>
+        <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">담임목사<br>지성구 목사</h3>
+        <p>리버풀에서의 유학 생활, 영국 생활, 또는 신앙에 관한 어떤 질문이든 환영합니다. 언제든지 연락 주세요.</p>
+        <p><strong>이메일:</strong> ukm0691@gmail.com<br>
+        <strong>카카오톡:</strong> ukm0691</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/LKCUK" target="_blank" class="social-btn">📘 Facebook</a>
+          <a href="mailto:ukm0691@gmail.com" class="social-btn">✉️ Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">리버풀 한인교회</div>
+        <div class="footer-brand-en">Liverpool Korean Church — LKCUK</div>
+        <p class="footer-brand-desc">리버풀 지역의 한인 유학생들의 신앙생활을 돕고, 교민과 함께 믿음의 다음세대를 양성하며, 리버풀 지역 복음화와 세계선교에 함께 합니다.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">빠른 링크</div>
+        <ul>
+          <li><a href="#about">교회 소개</a></li>
+          <li><a href="#worship">예배 안내</a></li>
+          <li><a href="#gallery">갤러리</a></li>
+          <li><a href="#location">오시는 길</a></li>
+          <li><a href="#giving">헌금 안내</a></li>
+          <li><a href="#contact">문의하기</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">연락처</div>
+        <ul>
+          <li><span>📍 78 Admiral St, Toxteth,<br>&nbsp;&nbsp;&nbsp;Liverpool L8 8BR</span></li>
+          <li><span>✉️ ukm0691@gmail.com</span></li>
+          <li><span>💬 카카오톡: ukm0691</span></li>
+          <li><a href="https://www.facebook.com/LKCUK" target="_blank">📘 facebook.com/LKCUK</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 리버풀 한인교회 (Liverpool Korean Church – LKCUK). All rights reserved.</p>
+      <p><a href="https://www.liverpoolkoreanchurch.org" style="color: rgba(255,255,255,0.35); text-decoration:none;">www.liverpoolkoreanchurch.org</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  btn.textContent = '전송 완료! ✓';
+  btn.style.background = '#2d6a4f';
+  setTimeout(() => {
+    btn.textContent = '메시지 보내기';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+
+const ham = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (ham) {
+  ham.addEventListener('click', () => {
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '68px';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.background = 'white';
+    navLinks.style.padding = '1rem 2rem';
+    navLinks.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+  });
+}
+</script>
+</body>
+</html>
